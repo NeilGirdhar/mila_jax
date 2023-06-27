@@ -14,4 +14,4 @@ echo "Hostname: $(hostname)"
 module purge
 module load python/3.10
 module load cuda/11.7
-srun poetry run play
+srun play
