@@ -1,0 +1,39 @@
+[build-system]
+requires = ['setuptools', 'poetry_core>=1.0']
+build-backend = 'poetry.core.masonry.api'
+
+[tool.poetry]
+name = 'mila_jax'
+version = '0.1'
+description = "A simple playground for testing Jax at Mila."
+license = 'MIT'
+authors = ['Neil Girdhar <mistersheik@gmail.com>']
+# readme = 'README.rst'
+repository = 'https://github.com/NeilGirdhar/mila_jax'
+classifiers = [
+    'Development Status :: 1 - Planning',
+    'Intended Audience :: Developers',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.10',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Typing :: Typed',
+    'License :: OSI Approved :: MIT License']
+
+[tool.poetry.dependencies]
+python = '>=3.10, <3.12'
+jax = {version = '>=0.4.13', extras = ['cuda']}
+typer = '>=0.6'
+
+[[tool.poetry.source]]
+name = "jorenham/jax_pep503"
+url = "https://jorenham.github.io/jax_pep503/"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.scripts]
+play = 'mila_jax.main:cli'
